@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -7,13 +8,13 @@ import routes from './routes';
 
 import { AppComponent } from './app.component';
 import { firebaseConfig } from '../environments/environment';
-import { ManagersComponent } from './managers/managers.component';
-
+import { CustomersComponent } from './customers/customers.component';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ManagersComponent
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,7 @@ import { ManagersComponent } from './managers/managers.component';
     AngularFirestoreModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

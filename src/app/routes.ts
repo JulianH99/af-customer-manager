@@ -1,4 +1,4 @@
-import { ManagersComponent } from './managers/managers.component';
+import { CustomersComponent } from './customers/customers.component';
 import { Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'customers',
-    component: ManagersComponent
+    component: CustomersComponent
   }
 ];
 
