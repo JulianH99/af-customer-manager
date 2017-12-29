@@ -6,3 +6,13 @@
 export const environment = {
   production: false
 };
+
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDgBVtjs2iX5pzNBHvcj4fI1pUIQb_uTEc',
+  authDomain: 'angular-customer.firebaseapp.com',
+  databaseURL: 'https://angular-customer.firebaseio.com',
+  projectId: 'angular-customer',
+  storageBucket: 'angular-customer.appspot.com',
+  messagingSenderId: '908139865252'
+};
