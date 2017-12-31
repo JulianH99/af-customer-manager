@@ -1,7 +1,9 @@
+import { CustomerId } from './../customer-id';
 import { Component, OnInit } from '@angular/core';
 import { Customer } from './../customer';
 import { CustomerService } from './../services/customer.service';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -11,9 +13,11 @@ import { Location } from '@angular/common';
 export class AddCustomerComponent implements OnInit {
 
   public customer: Customer;
+  public id: string;
   error = false;
 
   constructor(private customerService: CustomerService,
+    private route: ActivatedRoute,
     private location: Location) {
     this.customer = {
       name: '',
@@ -24,6 +28,12 @@ export class AddCustomerComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    if ((this.id = this.route.snapshot.params['id'])) {
+      this.customerService.fetchCustomer(this.id).subscribe(
+        customer => this.customer = customer
+      );
+    }
   }
 
 
@@ -41,6 +51,18 @@ export class AddCustomerComponent implements OnInit {
     }else {
       this.error = true;
     }
+  }
+
+  edit() {
+    const customer: CustomerId = {
+      ...this.customer,
+      id: this.id
+    };
+
+    this.customerService.updateCustomer(customer).then(
+      result => this.goBack()
+    );
+
   }
 
 }

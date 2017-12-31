@@ -7,7 +7,7 @@
       <p matLine>{{customer.celphone}}</p>
       <p matLine>
         <button mat-button color="warn" (click)="delete(customer.id)">DELETE</button>
-        <button mat-button (click)="edit(customer.id)">EDIT</button>
+        <a mat-button routerLink="/edit/{{customer.id}}">EDIT</a>
       </p>
     </mat-list-item>
 

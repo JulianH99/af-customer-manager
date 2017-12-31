@@ -17,6 +17,6 @@
   </div>
 
   <button mat-raised-button (click)="goBack()">GO BACK</button>
-  <button mat-raised-button color="primary" (click)="add()">ADD</button>
-
+  <button *ngIf="!id" mat-raised-button color="primary" (click)="add()">ADD</button>
+  <button *ngIf="id" mat-raised-button color="primary" (click)="edit()">EDIT</button>
 </form>
