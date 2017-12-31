@@ -1,0 +1,22 @@
+<form>
+  <h1 class="mat-display-1">Add a Customer</h1>
+  <mat-form-field class="full-input">
+    <input matInput placeholder="Name" [(ngModel)]="customer.name" name="name">
+  </mat-form-field>
+  <mat-form-field class="full-input">
+    <input matInput placeholder="Lastname" [(ngModel)]="customer.lastname" name="lastname">
+  </mat-form-field>
+  <mat-form-field class="full-input">
+    <input matInput placeholder="Address" [(ngModel)]="customer.address" name="address">
+  </mat-form-field >
+  <mat-form-field class="full-input">
+    <input matInput placeholder="Celphone" type="number" [(ngModel)]="customer.celphone" name="celphone">
+  </mat-form-field>
+  <div *ngIf="error">
+    <p class="mat-body-1" id="error-alert">You cant leave any input empty</p>
+  </div>
+
+  <button mat-raised-button (click)="goBack()">GO BACK</button>
+  <button mat-raised-button color="primary" (click)="add()">ADD</button>
+
+</form>

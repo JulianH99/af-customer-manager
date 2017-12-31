@@ -1,0 +1,15 @@
+form{
+  display: block;
+  width: 70%;
+  margin: 1em auto;
+}
+
+.full-input{
+  width: 90%;
+}
+
+
+#error-alert{
+  color: tomato;
+  margin-bottom: 1rem;
+}

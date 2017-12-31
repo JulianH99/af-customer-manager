@@ -1,4 +1,5 @@
 import { CustomersComponent } from './customers/customers.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'customers',
     component: CustomersComponent
+  },
+  {
+    path: 'add',
+    component: AddCustomerComponent
   }
 ];
 

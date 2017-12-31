@@ -1,3 +1,19 @@
-<p>
-  customers works!
-</p>
+<div class="container">
+  <h1 class="mat-display-1">Customers list</h1>
+  <mat-list *ngIf="customers">
+    <mat-list-item *ngFor="let customer of customers">
+      <p matLine>{{customer.name}} {{customer.lastname}}</p>
+      <p matLine>{{customer.address}}</p>
+      <p matLine>{{customer.celphone}}</p>
+      <p matLine>
+        <button mat-button color="warn" (click)="delete(customer.id)">DELETE</button>
+        <button mat-button (click)="edit(customer.id)">EDIT</button>
+      </p>
+    </mat-list-item>
+
+  </mat-list>
+  <button mat-fab color="primary" routerLink="/add" class="fab-button">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
